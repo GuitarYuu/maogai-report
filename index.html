@@ -131,6 +131,9 @@ li strong{color:var(--accent);font-weight:600}
 .flip-tag{margin-top:.9rem;font-family:var(--font-display);font-weight:600;font-size:.95rem;color:#fff;background:var(--accent);border-radius:999px;padding:.35rem 1.1rem}
 .flip-face.real .flip-tag{background:#a04a33}
 .flip-hint{font-size:.85rem;color:var(--text-secondary);animation:pulse 2.4s ease infinite}
+.flip-glyph{font-family:var(--font-display);font-size:clamp(3.6rem,7vw,5rem);line-height:1;margin-bottom:.7rem}
+.glyph-paper{color:#b8a67c}
+.glyph-real{color:#8c2d1f}
 
 /* ========== QUIZ GAME ========== */
 .quiz-wrap{max-width:780px;margin:0 auto;width:100%}
@@ -179,6 +182,15 @@ li strong{color:var(--accent);font-weight:600}
 .chart-play{font-family:var(--font-display);font-weight:600;font-size:.95rem;padding:.5rem 1.5rem;border-radius:999px;border:none;background:var(--gold);color:#fff;cursor:pointer;transition:all .25s}
 .chart-play:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .chart-caption{text-align:center;margin-top:.7rem}
+
+/* ========== HISTORICAL PHOTOS ========== */
+.figure{background:#fbf6ea;border:1px solid var(--border);border-radius:10px;padding:.5rem;box-shadow:var(--card-shadow);margin:0}
+.figure img{display:block;width:100%;height:100%;object-fit:cover;border-radius:5px;filter:sepia(.14) saturate(.92)}
+.figure figcaption{font-size:clamp(.68rem,1.02vw,.8rem);line-height:1.55;color:var(--text-secondary);padding:.5rem .35rem .1rem;text-align:center}
+.bottom-row{display:grid;grid-template-columns:1.15fr 1fr;gap:1.2rem;align-items:stretch;margin-top:1.1rem}
+.bottom-row .figure img{height:210px}
+#slide-10 .bottom-row{grid-template-columns:1fr 1.15fr}
+#slide-10 .bottom-row .figure img{height:260px}
 
 /* ========== FORMULA STRIP ========== */
 .formula-strip{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;background:linear-gradient(120deg,var(--accent),#7c1f1a);color:#fff;border-radius:12px;padding:.9rem 1.4rem;margin-top:1.1rem;box-shadow:0 6px 20px rgba(124,31,26,.28)}
@@ -283,9 +295,15 @@ li strong{color:var(--accent);font-weight:600}
         </div>
       </div>
     </div>
-    <div class="tip-box gold anim-fade-in anim-delay-6">
-      <span class="gold-label">教材定位</span>
-      <p style="margin:0">这一方针属于毛泽东思想主要内容中的<strong>「政策和策略的思想」</strong>，并贯穿于革命军队建设和军事战略的理论之中。</p>
+    <div class="bottom-row">
+      <figure class="figure anim-fade-in anim-delay-5">
+        <img src="images/strong-1946.jpg" alt="1946年8月，毛泽东在延安杨家岭会见安娜·路易斯·斯特朗">
+        <figcaption>1946年8月，毛泽东在延安杨家岭会见美国记者安娜·路易斯·斯特朗——「纸老虎」的论断，就诞生在这次谈话中（资料照片）。</figcaption>
+      </figure>
+      <div class="tip-box gold anim-fade-in anim-delay-6" style="margin:0;display:flex;flex-direction:column;justify-content:center">
+        <span class="gold-label">教材定位</span>
+        <p style="margin:0">这一方针属于毛泽东思想主要内容中的<strong>「政策和策略的思想」</strong>，并贯穿于革命军队建设和军事战略的理论之中。</p>
+      </div>
     </div>
   </div>
   <div class="page-number">3 / 15</div>
@@ -363,20 +381,20 @@ li strong{color:var(--accent);font-weight:600}
         <div class="flip-card" id="tigerCard" title="点击翻面">
           <div class="flip-inner">
             <div class="flip-face paper">
-              <div class="flip-emoji">📄🐯</div>
+              <div class="flip-glyph glyph-paper">虎</div>
               <div class="flip-title">纸老虎的一面</div>
               <div class="flip-desc">本质虚弱 · 脱离人民<br>貌似可怕，实际没有什么了不起的力量<br><strong>必然灭亡</strong></div>
               <div class="flip-tag">所以 · 战略上藐视</div>
             </div>
             <div class="flip-face real">
-              <div class="flip-emoji">🐯</div>
+              <div class="flip-glyph glyph-real">虎</div>
               <div class="flip-title">真老虎的一面</div>
               <div class="flip-desc">武装到牙齿 · 真会吃人<br>当下的凶恶是现实的存在<br><strong>不可轻率从事</strong></div>
               <div class="flip-tag">所以 · 战术上重视</div>
             </div>
           </div>
         </div>
-        <div class="flip-hint">👆 点击卡片翻面</div>
+        <div class="flip-hint">点击卡片翻面</div>
       </div>
       <div>
         <div class="tip-box anim-slide-up anim-delay-3">
@@ -402,7 +420,7 @@ li strong{color:var(--accent);font-weight:600}
   <div class="content-center" style="max-width:860px">
     <div class="section-label anim-fade-in">三 · 历史印证 · 互动环节</div>
     <h2 class="anim-slide-down anim-delay-1" style="border:none;margin-bottom:.2em">小测验：这句话，藐视还是重视？</h2>
-    <p class="small-text anim-fade-in anim-delay-1" style="color:var(--text-secondary);margin-bottom:1rem">判断下面每句话体现的是「战略上藐视」还是「战术上重视」，欢迎全场抢答 🙋</p>
+    <p class="small-text anim-fade-in anim-delay-1" style="color:var(--text-secondary);margin-bottom:1rem">判断下面每句话体现的是「战略上藐视」还是「战术上重视」，欢迎全场抢答</p>
     <div class="quiz-wrap anim-slide-up anim-delay-2">
       <div id="quiz"></div>
     </div>
@@ -467,9 +485,15 @@ li strong{color:var(--accent);font-weight:600}
         </ul>
       </div>
     </div>
-    <div class="tip-box army anim-slide-up anim-delay-4">
-      <span class="gold-label" style="color:var(--army)">战果</span>
-      <p class="small-text" style="margin:.3rem 0 0">三大战役（1948.9–1949.1）歼灭和改编国民党军 <strong>154 万余人</strong>——每一次「斤斤计较」的小胜，都在为纸老虎的倒掉添一块砝码。</p>
+    <div class="bottom-row">
+      <figure class="figure anim-slide-up anim-delay-4" style="margin:0">
+        <img src="images/zhiqian-1948.jpg" alt="淮海战役中人民群众用小推车运送物资">
+        <figcaption>淮海战役：人民群众用小推车把物资源源不断送上前线——「真正强大的力量属于人民」（资料照片）。</figcaption>
+      </figure>
+      <div class="tip-box army anim-slide-up anim-delay-4" style="margin:0;display:flex;flex-direction:column;justify-content:center">
+        <span class="gold-label" style="color:var(--army)">战果</span>
+        <p class="small-text" style="margin:.3rem 0 0">三大战役（1948.9–1949.1）歼灭和改编国民党军 <strong>154 万余人</strong>——每一次「斤斤计较」的小胜，都在为纸老虎的倒掉添一块砝码。</p>
+      </div>
     </div>
   </div>
   <div class="page-number">9 / 15</div>
@@ -498,9 +522,16 @@ li strong{color:var(--accent);font-weight:600}
         </ul>
       </div>
     </div>
-    <div class="formula-strip anim-bounce-in anim-delay-4">
-      <span class="fx">把战线稳定在三八线附近</span><span class="op">——</span>
-      <span class="fx">藐视的是它的气势，重视的是它的钢铁</span>
+    <div class="bottom-row">
+      <figure class="figure anim-slide-up anim-delay-4" style="margin:0">
+        <img src="images/kmyc-1958.jpg" alt="志愿军归国受到祖国人民欢迎">
+        <figcaption>抗美援朝战争结束后，志愿军将士分批归国，祖国人民夹道欢迎「最可爱的人」回家（资料照片）。</figcaption>
+      </figure>
+      <div class="formula-strip anim-bounce-in anim-delay-4" style="margin-top:0;flex-direction:column;gap:.5rem;text-align:center;justify-content:center">
+        <span class="fx">把战线稳定在三八线附近</span>
+        <span class="op">——</span>
+        <span class="fx">藐视的是它的气势，重视的是它的钢铁</span>
+      </div>
     </div>
   </div>
   <div class="page-number">10 / 15</div>
@@ -707,8 +738,8 @@ function quizRender(){
       </div>
       <div class="quiz-quote">「${q.t.replace(/^「|」$/g,'')}」</div>
       <div class="quiz-answers">
-        <button class="quiz-btn" data-a="S" onclick="quizAnswer('S')">战略 · 藐视 🦅</button>
-        <button class="quiz-btn" data-a="T" onclick="quizAnswer('T')">战术 · 重视 🛠️</button>
+        <button class="quiz-btn" data-a="S" onclick="quizAnswer('S')">战略 · 藐视</button>
+        <button class="quiz-btn" data-a="T" onclick="quizAnswer('T')">战术 · 重视</button>
       </div>
       <div class="quiz-feedback" id="quizFb"></div>
       <button class="quiz-next" id="quizNext" onclick="quizNext()">下一题 →</button>
@@ -729,7 +760,7 @@ function quizAnswer(a){
   if(!ok)dots[qi].classList.add('wrong');
   const fb=document.getElementById('quizFb');
   fb.className='quiz-feedback '+(ok?'ok':'ng');
-  fb.innerHTML=(ok?'✅ 答对了！':'❌ 再想想——正确答案是「'+(q.a==='S'?'战略 · 藐视':'战术 · 重视')+'」。<br>')+'<strong>解析：</strong>'+q.ex;
+  fb.innerHTML=(ok?'答对了。':'不对，正确答案是「'+(q.a==='S'?'战略 · 藐视':'战术 · 重视')+'」。')+'<strong>解析：</strong>'+q.ex;
   document.getElementById('quizNext').style.display='block';
 }
 function quizNext(){
@@ -737,16 +768,16 @@ function quizNext(){
   if(qi<quizData.length){quizRender();}
   else{
     let cmt;
-    if(qscore===8)cmt='满分！深得「敢于斗争、善于斗争」的精髓 🎖️';
-    else if(qscore>=6)cmt='不错，方向感很好，再打磨一下细节 👍';
-    else if(qscore>=4)cmt='初窥门径——回去翻翻教材第一章第二节 📖';
+    if(qscore===8)cmt='满分！深得「敢于斗争、善于斗争」的精髓。';
+    else if(qscore>=6)cmt='不错，方向感很好，再打磨一下细节。';
+    else if(qscore>=4)cmt='初窥门径——回去翻翻教材第一章第二节。';
     else cmt='纸老虎还没看穿，真老虎已经扑上来了，从头再来！';
     quizBox.innerHTML=`
       <div class="quiz-card quiz-result">
         <div class="quiz-score">${qscore} / 8</div>
         <div class="quiz-comment">${cmt}</div>
-        <button class="quiz-restart" onclick="quizReset()">🔄 再来一轮</button>
-        <p class="small-text" style="color:var(--text-secondary);margin-top:1rem;margin-bottom:0">继续翻页，看这两句话如何在战场上兑现 ↓</p>
+        <button class="quiz-restart" onclick="quizReset()">再来一轮</button>
+        <p class="small-text" style="color:var(--text-secondary);margin-top:1rem;margin-bottom:0">继续翻页，看这两句话如何在战场上兑现</p>
       </div>`;
   }
 }
